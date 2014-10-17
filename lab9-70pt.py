@@ -12,3 +12,10 @@
 # Accept user input 
 # Calculate fahrenheit
 # Output answer
+
+print "Input a Celsius temperatue to convert to a Fahrenheit temperature."
+
+userInput = int(raw_input())
+
+print int(((userInput * 9)/5)+32)
+    
