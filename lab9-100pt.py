@@ -14,23 +14,28 @@
 # - A temperature of over 102F and they have been sick in the last 24 hours
 # - A temperature over 100, OR they've been sick in the last 24 hours, AND they've recently travelled to West Africa.
 
-Africa = raw_input()
-sick = raw_input()
-temperature = raw_input()
+#Africa = raw_input()
+#sick = raw_input()
+#temperature = raw_input()
 keepGoing = True
 
-while keepGoing == True:
+while (keepGoing):
     print "What is your temperature?"
     temperature = raw_input()
-    print temperature
-    print "Have you been sick in the last 24 hours?"
+    if temperature > 105:
+        print "Go to the hospital immediately."    
+    #if temperature <= 104:
+        print "Have you been sick in the last 24 hours?"
     sick = raw_input()
-    print sick
-    print "Have you recently traveled to West Africa?"
+    if sick == "yes" and temperature > 102:
+        print "Go to the hospital immediately."
+    if sick == "no":
+        print "Have you recently traveled to West Africa?"
     Africa = raw_input()
-    print Africa    
-    print "Are there more people in the line?"
-    keepGoing = True
-    print keepGoing
-    #if temperature > "105":
-         #print "Go to the hospital immediately."
+    if Africa == "yes" and temperature > 100 or sick == "yes":
+       print "Go to the hospital immediatley."
+    if Africa == "no":
+       print "Are there more people in the line?"
+    keepGoing = raw_input()
+    if keepGoing == "no":
+        print "End"
