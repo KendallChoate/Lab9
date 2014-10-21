@@ -21,21 +21,22 @@ keepGoing = True
 
 while (keepGoing):
     print "What is your temperature?"
-    temperature = raw_input()
-    if temperature > 105:
-        print "Go to the hospital immediately."    
-    #if temperature <= 104:
-        print "Have you been sick in the last 24 hours?"
+    temperature = int(raw_input())
+    print temperature
+    print "Have you been sick in the last 24 hours?"
     sick = raw_input()
+    print sick
+    print "Have you recently traveled to West Africa?"
+    Africa = raw_input()
+    print Africa
+    print "Are there more people in the line?"
+    keepGoing = raw_input()
+    print keepGoing
+    if temperature > 105:
+        print "Go to the hospital immediately."
     if sick == "yes" and temperature > 102:
         print "Go to the hospital immediately."
-    if sick == "no":
-        print "Have you recently traveled to West Africa?"
-    Africa = raw_input()
     if Africa == "yes" and temperature > 100 or sick == "yes":
-       print "Go to the hospital immediatley."
-    if Africa == "no":
-       print "Are there more people in the line?"
-    keepGoing = raw_input()
+        print "Go to the hospital immediatley."
     if keepGoing == "no":
-        print "End"
+        keepGoing = False
